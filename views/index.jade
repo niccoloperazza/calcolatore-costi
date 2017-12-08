@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h1= title
+  p Benvenuto nel #{title}
+  br
+  p Puoi inserire qui i dati richiesti per conoscere il costo orario del tuo elettrodomestico.
+  br
+  form
+    label Qual'è il vattaggio dichiarato del tuo elettrodomestico? P.s. Quello che vedi segnato in etichetta è il vattaggio orario
+      br
+      input(type="text", name="w", id="w", placeholder="Kw")
+    br
+    label Per quante ore pensi di usarlo?
+      br
+      input(type="text", name="t", id="t", placeholder="Ore")
+    br
+    label Lo userai di giorno o di notte?
+      br
+      input(type="radio", name="momento", value="1", checked)
+      | Giorno
+      br
+      input(type="radio", name="momento", value="0")
+      | Notte
+    br
+    button(onclick="calc()") Calcola
